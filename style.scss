@@ -1,0 +1,64 @@
+$gutter: 30px;
+$primary-font: "Poppins", sans-serif;
+$background-color: #fefefe;
+$clr-1: #ffb319;
+$clr-2: #6f69ac;
+$clr-3: #80ed99;
+
+:root {
+  --clr-1: #{$clr-1};
+  --clr-2: #{$clr-2};
+  --clr-3: #{$clr-3};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  background-color: $background-color;
+}
+
+.pricing {
+  padding: 100px 0;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+%price-card {
+  margin-right: $gutter;
+  &:last-child {
+    margin-right: 0;
+  }
+  border: 5px solid var(--clr);
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  .fa-check {
+    color: #80ed99;
+  }
+  .fa-items {
+    color: firebrick;
+  }
+}
+
+.price-card.clr-1 {
+  @extend %price-card;
+  --clr: var(--clr-1);
+}
+.price-card.clr-2 {
+  @extend %price-card;
+  --clr: var(--clr-2);
+}
+.price-card.clr-3 {
+  @extend %price-card;
+  --clr: var(--clr-3);
+}
